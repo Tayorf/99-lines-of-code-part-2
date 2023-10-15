@@ -1,0 +1,15 @@
+body{
+    background-color:lightgoldenrodyellow;
+}
+h1{
+    color:hotpink;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.friend{
+    background-color:lavender;
+    font-style: oblique;
+}
+h3{
+    text-transform: uppercase;
+}
