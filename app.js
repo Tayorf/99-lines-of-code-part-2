@@ -1,18 +1,39 @@
-let friends = [
-    'henry',
-    'Pam',
-    'Bob',
-    'Maddie',
-    'Max'];
+document.addEventListener('DOMContentLoaded', function(){
+let button = document.getElementById('sing');
 
-for (let i = 0; i < friends.length; i++) {
-    for (let j = 99; j > 0; j--) {
-        if (j > 2) {
-            console.log(j + " lines of code in the file, " + j + " lines of code; " + friends[i] + " strikes one out, clears it all out, " + (j - 1) + " lines of code in the file");
-        } else if (j == 2) {
-            console.log(j + " lines of code in the file, " + j + " lines of code; " + friends[i] + " strikes one out, clears it all out, " + (j - 1) + " line of code in the file");
-        } else if (j == 1) {
-            console.log(j + " line of code in the file, " + j + " line of code; " + friends[i] + " strikes it out, clears it all out, no more lines of code in the file");
+button.addEventListener('click', function() {
+
+    let friends = ['Harmon', 'Kelly', 'Mac', 'Kyle', 'Scott'];
+
+    for (i = 0; i < friends.length; i++) {
+        //NEW CODE!!!
+        let friendDiv = document.createElement('div');
+        friendDiv.classList.add('friend');
+        document.body.appendChild(friendDiv);
+
+        let friendHead = document.createElement('h3');
+        let headText = document.createTextNode(friends[i]);
+        friendHead.appendChild(headText);
+        friendDiv.appendChild(friendHead);
+        
+        for (num = 99; num > 1; num--) {
+            var lyric = (num + ' lines of code in the file, ' + num + ' lines of code; ' + friends[i] + ' strikes one out, clears it all out, ' + (num - 1) + ' lines of code in the file!');
+            let pTag = document.createElement('p');
+            let paraText = document.createTextNode(lyric);
+            pTag.appendChild(paraText);
+            friendDiv.appendChild(pTag);
         }
+        
+        if (num == 1) {
+            var lyric = (num + ' line of code in the file, ' + num + ' line of code; ' + friends[i] + ' strikes one out, clears it all out, ' + (num - 1) + ' lines of code in the file!');
+            let pTag = document.createElement('p');
+            let paraText = document.createTextNode(lyric);
+            pTag.appendChild(paraText);
+            friendDiv.appendChild(pTag);
+        }
+        
     }
-}
+});
+
+})
+
